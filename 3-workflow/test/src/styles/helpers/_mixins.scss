@@ -1,0 +1,67 @@
+/// Mixin to customize scrollbars
+/// Beware, this does not work in all browsers
+/// @author Hugo Giraudel
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+/// @example scss - Scrollbar styling
+///   @include scrollbars(.5em, slategray);
+@mixin scrollbars() {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    position: absolute;
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $picton-blue;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $alto;
+  }
+}
+
+
+/*
+ * Typography
+ */
+@mixin heading($h) {
+  font-size: heading-size($h);
+  line-height: calc-ratio(heading-line($h), heading-size($h));
+}
+
+
+/*
+ * Bottom block with color/gradient
+ */
+@mixin evs-bottom($color: $color-corporate, $height: 4px) {
+  position: relative;
+  margin-bottom: $height;
+  background-position: right top;
+  transition: background-position .5s ease-out;
+
+  // &:hover,
+  .is-hover & {
+    background-position: left top;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -$height;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 8px;
+    background-position: inherit;
+    background-size: 200% 100%;
+    @if type-of($color) == color {
+      background-color: $color;
+    } @else if type-of($color) == list {
+      background-image: linear-gradient(to right, nth($color, 1) 57%, nth($color, 2) 57%, nth($color, 2) 93%, nth($color, 3) 93%);
+    } @else {
+      @warn '`#{$color}` is not a valid color or color-list';
+    }
+  }
+}

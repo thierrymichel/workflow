@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+/*jslint browser: true, devel: true */
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>jslint</tabTrigger>
+    <description>options</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js, text.html</scope>
+</snippet>

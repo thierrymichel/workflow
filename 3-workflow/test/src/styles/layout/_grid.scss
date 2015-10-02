@@ -1,0 +1,179 @@
+/*
+ * EVS Grid module
+ */
+
+
+
+/*
+ * Settings
+ */
+$grid-column: 220px !default;
+$grid-gutter: 20px !default;
+$grid-spacing: $grid-gutter;
+
+
+/*
+ * Column width calculation
+ * $value   list    {size} of {total} (eg: 1 of 4)
+ */
+@function calc-col-width($value) {
+  $size: nth($value, 1);
+  $total: nth($value, 3);
+
+  $ratio: 100 / $total * $size;
+  $coef: $ratio / 100;
+  $width: $ratio * 1%;
+  @return calc(#{$width} - #{$grid-gutter - $grid-gutter * $coef});
+}
+
+
+// Main grid elements max-width (.breadcrumb, .hero, .content)
+// .site-content classes:
+//    + .grid-wide (5 cols) > .main + .sidebar
+//    + .grid-narrow (4cols) > .main + .sidebar
+//    + .grid-wide|narrow--single > only .main
+// Note : double gutter between .main and .sidebar
+$grid-width-wide: $grid-column * 5 + $grid-gutter * 4 + $grid-gutter;
+$grid-width-narrow: $grid-column * 4 + $grid-gutter * 3 + $grid-gutter;
+
+.breadcrumb,
+.hero,
+.content {
+  margin: 0 auto;
+
+  [class*="grid-wide"] & {
+    max-width: $grid-width-wide;
+  }
+
+  [class*="grid-narrow"] & {
+    max-width: $grid-width-narrow;
+  }
+
+  // If just one .main content, no "double" gutter
+  [class*="grid-wide--single"] & {
+    max-width: $grid-width-wide - $grid-gutter;
+  }
+
+  [class*="grid-narrow--single"] & {
+    max-width: $grid-width-narrow - $grid-gutter;
+  }
+}
+
+
+/*
+ * Content
+ */
+.content {
+  @extend %cf;
+}
+
+@include mq('large') {
+  .main {
+    width: calc(100% - #{$grid-column + 2 * $grid-gutter});
+
+    [class*="--single"] & {
+      width: 100%;
+    }
+  }
+
+  .sidebar {
+    width: $grid-column;
+  }
+
+  .main:first-child,
+  .sidebar:first-child {
+    float: left;
+
+    + .sidebar,
+    + .main {
+      float: right;
+    }
+  }
+}
+
+
+/*
+ * Rows and cols
+ */
+.row {
+  @extend %cf;
+}
+
+@include mq('medium') {
+  .col,
+  [class*="col"] {
+    float: left;
+    margin-right: $grid-gutter;
+  }
+
+  .col--full {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .col--last,
+  [class*="col"]:last-of-type {
+    float: right;
+    margin-right: 0;
+  }
+
+  .grid-wide--single {
+    .col--1 {
+      width: calc-col-width(1 of 5);
+    }
+
+    .col--2 {
+      width: calc-col-width(2 of 5);
+    }
+
+    .col--3 {
+      width: calc-col-width(3 of 5);
+    }
+
+    .col--4 {
+      width: calc-col-width(4 of 5);
+    }
+
+    .col--5 {
+      @extend .col--full;
+    }
+  }
+
+  .grid-wide,
+  .grid-narrow--single {
+    .col--1 {
+      width: calc-col-width(1 of 4);
+    }
+
+    .col--2,
+    .col--half {
+      width: calc-col-width(2 of 4);
+    }
+
+    .col--3 {
+      width: calc-col-width(3 of 4);
+    }
+
+    .col--4 {
+      @extend .col--full;
+    }
+  }
+
+  .grid-narrow {
+    .col--1 {
+      width: calc-col-width(1 of 3);
+    }
+
+    .col--half {
+      width: calc-col-width(1.5 of 3);
+    }
+
+    .col--2 {
+      width: calc-col-width(2 of 3);
+    }
+
+    .col--3 {
+      @extend .col--full;
+    }
+  }
+}

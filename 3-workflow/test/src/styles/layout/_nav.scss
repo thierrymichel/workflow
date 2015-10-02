@@ -1,0 +1,135 @@
+.nav {
+  text-transform: uppercase;
+}
+
+.nav__trigger {
+  float: right;
+
+  @include mq('large') {
+    display: none;
+  }
+}
+
+.nav__wrapper {
+  background-color: $white;
+
+  @include mq('small', 'large') {
+    position: absolute;
+    z-index: 20;
+    top: $header-inner-height + $header-inner-space;
+    left: 0;
+    display: none;
+    padding: $grid-spacing / 2 $header-padding-left $grid-spacing;
+
+
+    .nav-is-open & {
+      display: block;
+    }
+  }
+}
+
+.nav__primary,
+.nav__secondary {
+  @extend %cf;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__primary {
+  margin-bottom: $grid-spacing / 2;
+
+  @include mq('large') {
+    float: left;
+    padding-left: $grid-spacing * 2;
+  }
+}
+
+.nav__secondary {
+  @include mq('large') {
+    float: right;
+    padding-right: $grid-spacing;
+  }
+}
+
+.nav__primary__item,
+.nav__secondary__item {
+
+  &:before {
+    content: '';
+    margin: 0;
+  }
+
+  @include mq('small', 'large') {
+    a {
+      display: block;
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+
+  @include mq('large') {
+    a {
+      display: block;
+      height: $header-inner-height;
+      line-height: $header-inner-height;
+    }
+  }
+}
+
+.nav__primary__item {
+
+  @include mq('small', 'large') {
+    border-bottom: 1px solid $alto;
+
+    a {
+      width: 320px;
+      padding-right: $grid-spacing;
+
+      &:after {
+        content: '';
+        display: block;
+        float: right;
+        width: 0;
+        height: 0;
+        margin-top: 25px;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid $tapa;
+      }
+    }
+  }
+
+  @include mq('large') {
+    display: inline-block;
+    margin-left: $grid-spacing;
+
+    a {
+      &:hover {
+        text-decoration: none;
+        font-weight: 700;
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0 0 2px;
+      }
+    }
+  }
+}
+
+.nav__secondary__item {
+  a {
+    height: 40px;
+    color: $tapa;
+    // font-size: 1.4rem;
+    line-height: 40px;
+  }
+
+  @include mq('xlarge') {
+    display: inline-block;
+    margin-right: $grid-spacing / 2;
+
+    a {
+      font-size: 1.4rem;
+    }
+  }
+}

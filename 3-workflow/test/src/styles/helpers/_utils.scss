@@ -1,0 +1,113 @@
+// Miscellaneous useful HTML classes
+.u-pull-left {
+  float: left !important;
+}
+
+.u-pull-right {
+  float: right !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-justify {
+  text-align: justify !important;
+}
+
+
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+.u-hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.u-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+
+  /*
+   * Extends the .visuallyhidden class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+  &.is-focusable {
+    &:active,
+    &:focus {
+      position: static;
+      overflow: visible;
+      width: auto;
+      height: auto;
+      margin: 0;
+      clip: auto;
+    }
+  }
+}
+
+/*
+ * Clearfix: contain floats
+ * http://cssmojo.com/latest_new_clearfix_so_far/
+ */
+.u-clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-table {
+  display: table;
+}
+
+.u-cell {
+  display: table-cell;
+}
+
+.u-va-middle {
+  vertical-align: middle;
+}
+
+/**
+ * Text hyphenation
+ *
+ * Break strings when their length exceeds the width of their container
+ * and hyphenate words at the end of lines using the `hyphens` property.
+ * Browser support for hyphenation: http://caniuse.com/#search=hyphenation
+ */
+.u-text-hyphenate {
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/**
+ * Prevent line breaks
+ */
+.u-nobr {
+  white-space: nowrap;
+}

@@ -1,0 +1,88 @@
+.header {
+  @extend %cf;
+  position: relative;
+  border-bottom: 2px solid $picton-blue;
+  padding-top: $header-padding-top;
+  padding-right: $header-padding-right;
+  padding-left: $header-padding-horiz;
+  background-color: $white;
+  z-index: 10;
+}
+
+.header__logo,
+.header__nav,
+.header__search,
+.header__my-evs {
+  height: $header-inner-height;
+  line-height: $header-inner-height;
+  float: left;
+}
+
+.header__logo {
+  width: $header-logo-width;
+
+  a,
+  img {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.header__nav {
+  width: calc(100% - #{$header-logo-width + $header-icon-width * 2});
+
+  @include mq('xlarge') {
+    width: calc(100% - #{$header-logo-width + $header-icon-width * 4});
+  }
+}
+
+.header__search,
+.header__my-evs {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    display: block;
+    width: 1px;
+    height: $header-icon-height;
+    background-color: $alto;
+  }
+}
+
+.header__my-evs {
+  text-transform: uppercase;
+
+  a {
+    display: inline-block;
+    width: $header-icon-width;
+    height: $header-icon-height;
+    background: url('../images/icon-default.png') no-repeat center top;
+    color: $tapa;
+  }
+
+  span {
+    display: none;
+  }
+
+  @include mq('xlarge') {
+
+    a {
+      width: auto;
+      height: auto;
+      padding-left: $header-icon-width;
+      background-position: left 2px;
+      line-height: $header-inner-height;
+    }
+
+    span {
+      display: block;
+
+    }
+  }
+}

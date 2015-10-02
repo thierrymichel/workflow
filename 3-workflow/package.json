@@ -1,0 +1,40 @@
+{
+  "name": "gulp-epic",
+  "version": "0.0.1",
+  "description": "Basic (first step) process for styles (sass, autoprefixer, sourcemaps), scripts (concat, uglify, sourcemaps), images (imagemin) with livereload",
+  "author": {
+    "name": "Thierry Michel",
+    "email": "thierry@epic.net",
+    "url": "http://epic.net/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "concatenify": "^1.0.1",
+    "del": "^2.0.0",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-cached": "^1.1.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-deleted": "https://github.com/thierrymichel/gulp-deleted/tarball/945afbbd5a81f4afa31fd5819f3a1d5ecd0b4d89",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^6.0.1",
+    "gulp-rev-replace": "^0.4.2",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "lazypipe": "^1.0.1",
+    "lodash.assign": "^3.2.0",
+    "rev-del": "^1.0.4",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.3.1"
+  }
+}

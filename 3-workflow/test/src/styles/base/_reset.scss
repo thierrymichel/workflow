@@ -1,0 +1,38 @@
+/*
+ * Global
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/*
+ * Blocks
+ */
+menu,
+ol,
+ul {
+  padding-left: 25px;
+}
+
+
+/*
+ * Media
+ */
+figure {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

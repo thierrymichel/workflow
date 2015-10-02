@@ -1,0 +1,7 @@
+head:first-child + body #foo {
+  position: fixed;
+  //_position: static;
+  width: 80px;
+  //w\idth: 100px;
+  overflow: hidden !important;
+}

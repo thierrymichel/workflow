@@ -1,0 +1,94 @@
+/*
+ * Global
+ */
+
+/*
+ * @font-face
+ */
+@font-face {
+  font-family: 'DIN';
+  src: url('../fonts/din-regularitalic.eot');
+  src: url('../fonts/din-regularitalic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/din-regularitalic.woff2') format('woff2'),
+       url('../fonts/din-regularitalic.woff') format('woff'),
+       url('../fonts/din-regularitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+$ff: 'DIN', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !default;
+
+/*
+ * HTML and BODY
+ */
+
+$base-font-size: 16 !default;
+
+html {
+  font-size: calc-percent(10, $base-font-size);
+}
+
+body {
+  color: $shark;
+  font-family: $ff;
+  font-size: 1.8rem;
+  line-height: calc-ratio(2.9rem, 1.8rem);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/*
+ * Sizes, spacing and rythm
+ */
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $grid-spacing;
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  @include heading('h1');
+}
+
+// Block elements
+blockquote,
+p {
+  margin: 0 0 1em;
+}
+
+
+// Inline
+a {
+  color: $picton-blue;
+  font-size: 1.8rem;
+  line-height: calc-ratio(2.9rem, 1.8rem);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/*
+ * Advanced settings
+ */
+// Turn on kerning and ligatures
+html,
+body {
+  font-feature-settings: 'kern', 'liga';
+}
+
+// Turn off kerning and ligatures for monospace type
+pre,
+code {
+  font-feature-settings: normal;
+}

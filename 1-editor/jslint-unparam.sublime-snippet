@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+/*jslint unparam: true*/
+${1:your code here…}
+/*jslint unparam: false*/
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>jslint</tabTrigger>
+    <description>unparam</description>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js, text.html</scope>
+</snippet>

@@ -1,0 +1,51 @@
+.alert{
+  font-size: 1.4rem;
+  line-height: 2.9rem;
+  display: inline-block;
+  padding: 3px 23px 3px 34px;
+  position: relative;
+  border-radius: 1px;
+  a{
+    font-size: 1.4rem;
+    text-decoration: underline;
+  }
+  &:before{
+    position: absolute;
+    font-family: 'icomoon';
+    font-size: 2rem;
+    left: 8px;
+  }
+}
+
+.alert--danger{
+  color: $red-pigment;
+  border: 2px solid $red-pigment;
+  a{
+    color: $red-pigment;
+  }
+  &:before{
+    content: "\e605";
+  }
+}
+
+.alert--info{
+  color: $curious-blue;
+  border: 2px solid $curious-blue;
+  a{
+    color: $curious-blue;
+  }
+  &:before{
+    content: "\e61f";
+  }
+}
+
+.alert--success{
+  color: $apple;
+  border: 2px solid $apple;
+  a{
+    color: $apple;
+  }
+  &:before{
+    content: "\e63b";
+  }
+}

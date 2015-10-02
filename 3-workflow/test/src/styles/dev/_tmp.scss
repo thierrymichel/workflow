@@ -1,0 +1,27 @@
+.tabs,
+.form-item {
+  display: none;
+}
+
+.social {
+  padding: 0;
+  list-style-type: none;
+}
+.social__item {
+  display: inline-block;
+  width: $grid-spacing;
+  height: $grid-spacing;
+  vertical-align: middle;
+
+  // dev
+  background-color: $picton-blue;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+  }
+}
+
+footer {
+  background-image: url('../images/icon-default.png');
+}

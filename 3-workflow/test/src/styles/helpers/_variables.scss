@@ -1,0 +1,117 @@
+/*
+ * DEV mode
+ */
+$debug: true;
+
+
+/*
+ * Colors
+ * for the naming use http://name-of-color.com/
+ * from darker to lighter ?
+ */
+
+
+// Corporate -> blue
+$science-blue: #06c;
+$curious-blue: #2792dd;
+$picton-blue: #4dbeee;
+$celestial-blue: #42a3cc; // pro news
+
+// list for gradient (block bottom)
+$colors-corporate: (
+  $science-blue,
+  $curious-blue,
+  $picton-blue
+);
+
+// Entertainment -> yellow
+$trinidad: #ed4500;
+$chilean-fire: #f67403;
+$yellow-sea: #ffa506;
+
+// Sport -> green
+$cadmium-green: #006c3f;
+$apple: #46993f;
+$yellow-green: #8cc63f;
+
+// Media -> lila
+$meteorite: #441a78;
+$seance: #6b1c84;
+$violet-eggplant: #921e8f;
+
+// News -> red
+$carmine: #990020;
+$red-ncs: #cc002b;
+$red-pigment: #ed1c32;
+
+
+// Grayscale
+$shark: #262626;
+$tapa: #777;
+$dark-gray: #aaa;
+$alto: #dbdbdb;
+$black-haze: #f6f6f6;
+$white: #fff;
+
+
+
+/*
+ * Typography
+ */
+
+$headings: (
+  'h1': (3rem, 3.6rem),
+  'h2': (2.4rem, 3rem),
+  'h3': (1.8rem, 2.4rem),
+  'h4': (1.4rem, 1.8rem),
+  'h5': (1.2rem, 1.5rem)
+);
+
+
+
+/*
+ * Grid & spacing
+ */
+
+$grid-column: 220px;
+$grid-gutter: 20px;
+$grid-spacing: $grid-gutter;
+
+
+/*
+ * Layout
+ */
+$header-inner-height: 50px;
+$header-inner-height-xl: 65px;
+$header-inner-space: 30px;
+
+$header-padding-top: $grid-spacing * 1.4;
+$header-padding-right: 4px;
+$header-padding-left: $grid-spacing * 1.8;
+$header-padding-horiz: $header-padding-left;
+
+$header-logo-width: 120px;
+$header-logo-width-xl: 155px;
+
+$header-icon-width: 48px;
+$header-icon-height: 30px;
+
+/*
+ * RWD
+ */
+$mq-responsive: true;
+$mq-static-breakpoint: 'x-large';
+// $mq-breakpoints auto-generated from json file (/data/breakpoints.json) via Gulp
+// -> breakpoints can be shared with JS scripts
+// $mq-breakpoints: (
+//   'small': 320px,
+//   'medium': 768px,
+//   'large': 1024px,
+//   'xlarge': 1280px,
+//   'xxlarge': 1440px
+// );
+$mq-show-breakpoints: ();
+@if $debug {
+  // show all breakpoints
+  $mq-show-breakpoints: map-keys($mq-breakpoints);
+}

@@ -1,0 +1,39 @@
+/*
+ * Helpers
+ */
+
+/*
+ * Clearfix: contain floats
+ * http://cssmojo.com/latest_new_clearfix_so_far/
+ */
+%cf {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+%hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+%visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}

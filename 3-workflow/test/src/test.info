@@ -1,0 +1,7 @@
+name = TEST
+package = test
+version = 1.0
+core = 7.x
+
+stylesheets[all][] = styles/main.min.css
+scripts[] = scripts/main.min.js
